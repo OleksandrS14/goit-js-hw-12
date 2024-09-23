@@ -100,3 +100,7 @@ input:focus::placeholder {
     transform: rotate(360deg);
   }
 }
+
+.is-hidden {
+  display: none;
+}

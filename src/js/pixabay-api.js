@@ -15,7 +15,7 @@ page,
 per_page: 15,
   });
   try {
-    const data = await axios(`${BASE_URL}?${searchParams}`)
+    const {data} = await axios(`${BASE_URL}?${searchParams}`)
     return data;
   } catch (error) {
     console.log(error);
