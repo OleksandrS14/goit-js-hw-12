@@ -19,6 +19,7 @@ async function onFormSearch(event){
   console.log(query);
   page=1;
   gallery.innerHTML = '';
+  loadMoreBtn.classList.add('is-hidden');
   if(query === ''){
     iziToast.warning({
       message: 'Please enter a search query',
@@ -65,6 +66,12 @@ async function onLoadMore(){
     const markup = createGalleryMarkup(data.hits);
 gallery.insertAdjacentHTML('beforeend', markup);
 lightbox.refresh();
+const card = document.querySelector('.gallery_item');
+const cardHeight = card.getBoundingClientRect().height;
+window.scrollBy({
+  top: cardHeight * 2,
+  behavior : "smooth",
+})
 const maxPage = Math.ceil(data.totalHits / 15);
 if (maxPage === page){
   loadMoreBtn.classList.add('is-hidden');

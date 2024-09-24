@@ -27,7 +27,7 @@ button {
   border: none;
   border-radius: 8px;
   padding: 8px 16px;
-  width: 91px;
+  min-width: 91px;
   height: 40px;
 }
 
@@ -101,6 +101,12 @@ input:focus::placeholder {
   }
 }
 
+.load-more{
+  margin: 0 auto;
+  display: block;
+}
+
 .is-hidden {
   display: none;
 }
+
